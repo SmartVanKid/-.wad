@@ -171,9 +171,9 @@
     <!-- พื้นหลังภาพสนามแข่ง Esport -->
     <div class="background-container"></div>
 
-    <!-- ไฟล์เสียงเพลง (ซ่อนเครื่องเล่นเดิมของเบราว์เซอร์) -->
+    <!-- ไฟล์เสียงเพลงแนว Electronic/Cyberpunk ที่ใช้งานได้จริง -->
     <audio id="bg-music" loop>
-        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf756.mp3?filename=cyberpunk-2099-10701.mp3" type="audio/mpeg">
+        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c365ca36.mp3?filename=cyberpunk-experimental-10780.mp3" type="audio/mpeg">
         เบราว์เซอร์ของคุณไม่รองรับการเล่นเสียง
     </audio>
 
@@ -228,11 +228,14 @@
 
         function toggleMusic() {
             if (music.paused) {
-                music.play();
-                playBtn.textContent = '❚❚'; // เปลี่ยนไอคอนเป็น Pause เมื่อเพลงเล่น
+                music.play().then(() => {
+                    playBtn.textContent = '❚❚';
+                }).catch(error => {
+                    console.log("Audio play blocked:", error);
+                });
             } else {
                 music.pause();
-                playBtn.textContent = '▶';  // เปลี่ยนไอคอนเป็น Play เมื่อเพลงหยุด
+                playBtn.textContent = '▶';
             }
         }
     </script>
