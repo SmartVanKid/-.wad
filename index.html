@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #ffffff;
+            color: #f0f4f8;
             overflow-x: hidden;
             min-height: 100vh;
             display: flex;
@@ -21,7 +21,7 @@
             justify-content: space-between;
         }
 
-        /* พื้นหลังและภาพประกอบ */
+        /* พื้นหลังโทน ฟ้า - น้ำเงิน */
         .background-container {
             position: fixed;
             top: 0;
@@ -29,29 +29,29 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: linear-gradient(rgba(10, 10, 26, 0.8), rgba(20, 20, 40, 0.85)), 
-                        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(5, 15, 30, 0.9)), 
+                        url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
         }
 
-        /* ส่วนหัวข้อเว็บ */
+        /* ส่วนหัวข้อเว็บ (โทนน้ำเงิน-ฟ้า-ขาว) */
         header {
             text-align: center;
             padding: 40px 20px;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(5px);
-            border-bottom: 2px solid #00ffcc;
+            background: rgba(13, 27, 42, 0.7);
+            backdrop-filter: blur(8px);
+            border-bottom: 3px solid #38bdf8;
         }
 
         header h1 {
             font-size: 3rem;
-            color: #00ffcc;
-            text-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+            color: #38bdf8;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
             margin-bottom: 10px;
         }
 
         header p {
             font-size: 1.2rem;
-            color: #b3b3b3;
+            color: #93c5fd;
         }
 
         /* เนื้อหาหลัก */
@@ -59,32 +59,32 @@
             max-width: 900px;
             margin: 40px auto;
             padding: 30px;
-            background: rgba(15, 15, 35, 0.75);
+            background: rgba(15, 23, 42, 0.8);
             border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(56, 189, 248, 0.2);
         }
 
         .section-title {
-            color: #ff0077;
+            color: #60a5fa;
             font-size: 1.8rem;
             margin-bottom: 15px;
-            border-left: 5px solid #ff0077;
+            border-left: 5px solid #38bdf8;
             padding-left: 10px;
         }
 
         p.content-text {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #e0e0e0;
+            color: #e2e8f0;
             margin-bottom: 25px;
         }
 
         .timeline {
             list-style: none;
             padding-left: 20px;
-            border-left: 2px solid #00ffcc;
+            border-left: 2px solid #38bdf8;
             margin: 20px 0;
         }
 
@@ -101,41 +101,40 @@
             top: 5px;
             width: 12px;
             height: 12px;
-            background: #00ffcc;
+            background: #38bdf8;
             border-radius: 50%;
-            box-shadow: 0 0 10px #00ffcc;
+            box-shadow: 0 0 10px #38bdf8;
         }
 
         .timeline h4 {
-            color: #00ffcc;
+            color: #93c5fd;
             font-size: 1.2rem;
         }
 
-        /* ส่วนควบคุมเสียงเพลงแบบปุ่มเดี่ยวสไตล์มินิมอล */
+        /* ส่วนควบคุมเสียงเพลงแบบปุ่มกด (โทนฟ้า-น้ำเงิน) */
         .music-player {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: rgba(20, 20, 40, 0.9);
+            background: rgba(13, 27, 42, 0.95);
             padding: 12px 20px;
             border-radius: 30px;
             display: flex;
             align-items: center;
             gap: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-            border: 1px solid #00ffcc;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+            border: 1px solid #38bdf8;
             z-index: 1000;
         }
 
         .music-info {
             font-size: 0.95rem;
-            color: #00ffcc;
+            color: #38bdf8;
         }
 
-        /* ปุ่มเล่นเพลงสไตล์เกมมิ่ง */
         .play-btn {
-            background: #00ffcc;
-            color: #0a0a1a;
+            background: #38bdf8;
+            color: #0b132b;
             border: none;
             width: 38px;
             height: 38px;
@@ -145,41 +144,47 @@
             align-items: center;
             justify-content: center;
             font-size: 1rem;
+            font-weight: bold;
             transition: 0.2s;
-            box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.5);
         }
 
         .play-btn:hover {
-            background: #ff0077;
-            color: #ffffff;
-            box-shadow: 0 0 15px rgba(255, 0, 119, 0.8);
-            transform: scale(1.05);
+            background: #ffffff;
+            color: #0369a1;
+            box-shadow: 0 0 18px rgba(255, 255, 255, 0.8);
+            transform: scale(1.08);
+        }
+
+        /* ซ่อนไอเฟรม YouTube ไว้เบื้องหลังเพื่อเล่นเพลง */
+        .hidden-audio {
+            display: none;
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 20px;
-            background: rgba(0, 0, 0, 0.6);
-            color: #777;
+            background: rgba(10, 25, 47, 0.9);
+            color: #94a3b8;
             font-size: 0.9rem;
+            border-top: 1px solid rgba(56, 189, 248, 0.1);
         }
     </style>
 </head>
 <body>
 
-    <!-- พื้นหลังภาพสนามแข่ง Esport -->
+    <!-- พื้นหลังภาพโทนฟ้า-น้ำเงิน -->
     <div class="background-container"></div>
 
-    <!-- ไฟล์เสียงเพลงแนว Electronic/Cyberpunk ที่ใช้งานได้จริง -->
-    <audio id="bg-music" loop>
-        <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c365ca36.mp3?filename=cyberpunk-experimental-10780.mp3" type="audio/mpeg">
-        เบราว์เซอร์ของคุณไม่รองรับการเล่นเสียง
-    </audio>
+    <!-- ตัวเล่นเพลงผ่าน YouTube แบบซ่อนวิดีโอ (เล่นเพลงสไตล์เกมมิ่งมันส์ๆ) -->
+    <div class="hidden-audio">
+        <iframe id="youtube-audio" width="0" height="0" src="https://www.youtube.com/embed/7X8m-T09d7U?enablejsapi=1&autoplay=0&loop=1&playlist=7X8m-T09d7U" frameborder="0"></iframe>
+    </div>
 
-    <!-- กล่องควบคุมเพลงแบบปุ่มกดพร้อมอีโมจิ 🎵 -->
+    <!-- กล่องควบคุมเพลง (ปุ่มกด + อีโมจิ 🎵) -->
     <div class="music-player">
-        <div class="music-info">🎵 Synthwave Esport</div>
+        <div class="music-info">🎵 Esport Gaming Theme</div>
         <button class="play-btn" id="playBtn" onclick="toggleMusic()">▶</button>
     </div>
 
@@ -221,21 +226,23 @@
         <p>&copy; 2026 Esport History Project. All rights reserved.</p>
     </footer>
 
-    <!-- Script สำหรับควบคุมการเล่น/หยุดเพลงด้วยปุ่ม -->
+    <!-- Script สำหรับควบคุมการเล่นเพลงผ่าน YouTube API -->
     <script>
-        const music = document.getElementById('bg-music');
+        let isPlaying = false;
         const playBtn = document.getElementById('playBtn');
+        const iframe = document.getElementById('youtube-audio');
 
         function toggleMusic() {
-            if (music.paused) {
-                music.play().then(() => {
-                    playBtn.textContent = '❚❚';
-                }).catch(error => {
-                    console.log("Audio play blocked:", error);
-                });
+            if (!isPlaying) {
+                // สั่งเล่นเพลง
+                iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+                playBtn.textContent = '❚❚';
+                isPlaying = true;
             } else {
-                music.pause();
+                // สั่งหยุดเพลง
+                iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
                 playBtn.textContent = '▶';
+                isPlaying = false;
             }
         }
     </script>
