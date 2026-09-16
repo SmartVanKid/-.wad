@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ประวัติความเป็นมาของ Esport</title>
+    <title>ประวัติและ 10 อันดับ Esport เงินรางวัลสูงสุด</title>
     <style>
         * {
             margin: 0;
@@ -66,10 +66,18 @@
             border: 1px solid rgba(56, 189, 248, 0.2);
         }
 
+        section {
+            margin-bottom: 40px;
+        }
+
+        section:last-child {
+            margin-bottom: 0;
+        }
+
         .section-title {
             color: #60a5fa;
             font-size: 1.8rem;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             border-left: 5px solid #38bdf8;
             padding-left: 10px;
         }
@@ -109,6 +117,44 @@
         .timeline h4 {
             color: #93c5fd;
             font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        /* รายการ 10 อันดับ (ol) */
+        .esport-list {
+            padding-left: 20px;
+            line-height: 1.8;
+        }
+
+        .esport-list li {
+            margin-bottom: 20px;
+            background: rgba(30, 41, 59, 0.6);
+            padding: 15px 20px;
+            border-radius: 10px;
+            border-left: 4px solid #38bdf8;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+
+        .esport-list li:hover {
+            transform: translateX(5px);
+            background: rgba(30, 41, 59, 0.9);
+        }
+
+        .esport-list strong {
+            color: #38bdf8;
+            font-size: 1.15rem;
+        }
+
+        .prize {
+            color: #34d399; /* สีเขียวมิ้นต์เน้นตัวเลขเงินรางวัล */
+            font-weight: bold;
+        }
+
+        .desc {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            margin-top: 5px;
         }
 
         /* ส่วนควบคุมเสียงเพลงแบบปุ่มกด (โทนฟ้า-น้ำเงิน) */
@@ -172,7 +218,7 @@
     <!-- พื้นหลังภาพโทนฟ้า-น้ำเงิน -->
     <div class="background-container"></div>
 
-    <!-- ไฟล์เสียงเพลงแนวอิเล็กทรอนิกส์/เกมมิ่งสไตล์เร้าใจ (วนลูปอัตโนมัติ) -->
+    <!-- ไฟล์เสียงเพลง (วนลูปอัตโนมัติ) -->
     <audio id="bg-music" loop>
         <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf756.mp3?filename=cyberpunk-2099-10701.mp3" type="audio/mpeg">
         เบราว์เซอร์ของคุณไม่รองรับการเล่นเสียง
@@ -185,11 +231,12 @@
     </div>
 
     <header>
-        <h1>ESPORTS HISTORY</h1>
-        <p>วิวัฒนาการจากเกมตู้หยอดเหรียญสู่มหกรรมกีฬาอัจฉริยะระดับโลก</p>
+        <h1>ESPORTS WORLD</h1>
+        <p>ประวัติความเป็นมาและ 10 อันดับทัวร์นาเมนต์เงินรางวัลสูงสุดระดับโลก</p>
     </header>
 
     <main>
+        <!-- ส่วนที่ 1: ประวัติความเป็นมา -->
         <section>
             <h2 class="section-title">จุดเริ่มต้นของวงการ Esport</h2>
             <p class="content-text">
@@ -197,24 +244,79 @@
                 โดยการแข่งขันวิดีโอเกมครั้งแรกเกิดขึ้นในวันที่ 19 ตุลาคม ค.ศ. 1972 ที่มหาวิทยาลัย Stanford 
                 ในการแข่งขันเกม Spacewar! โดยมีรางวัลเป็นแพ็กเกจวารสาร Rolling Stone
             </p>
-        </section>
 
-        <section>
-            <h2 class="section-title">ไทม์ไลน์การเติบโตสำคัญ</h2>
+            <h3 style="color: #93c5fd; margin-bottom: 15px; font-size: 1.3rem;">ไทม์ไลน์การเติบโตสำคัญ</h3>
             <ul class="timeline">
                 <li>
                     <h4>ทศวรรษ 1980-1990 (ยุคตู้เกมและอินเทอร์เน็ตคาเฟ่)</h4>
-                    <p>การแข่งขันเริ่มเติบโตผ่านตู้ Arcade และการมาถึงของเกมแนว Arcade Fighting และ LAN Party ในคอมพิวเตอร์</p>
+                    <p style="color: #cbd5e1;">การแข่งขันเริ่มเติบโตผ่านตู้ Arcade และการมาถึงของเกมแนว Arcade Fighting และ LAN Party ในคอมพิวเตอร์</p>
                 </li>
                 <li>
                     <h4>ยุค 2000s (จุดเปลี่ยนผ่านสู่อินเทอร์เน็ตความเร็วสูง)</h4>
-                    <p>ประเทศเกาหลีใต้ถือเป็นชาติบุกเบิกที่ทำให้ Esport เติบโตเป็นอุตสาหกรรมระดับชาติ มีการถ่ายทอดสดผ่านโทรทัศน์และก่อตั้งสมาคม KeSPA</p>
+                    <p style="color: #cbd5e1;">ประเทศเกาหลีใต้ถือเป็นชาติบุกเบิกที่ทำให้ Esport เติบโตเป็นอุตสาหกรรมระดับชาติ มีการถ่ายทอดสดผ่านโทรทัศน์และก่อตั้งสมาคม KeSPA</p>
                 </li>
                 <li>
                     <h4>ยุคปัจจุบัน (มหกรรมกีฬาระดับสากล)</h4>
-                    <p>Esport เติบโตอย่างก้าวกระโดดด้วยแพลตฟอร์มสตรีมมิ่ง (Twitch, YouTube) และได้รับการบรรจุเข้าแข่งขันในมหกรรมกีฬาระดับทวีป เช่น เอเชียนเกมส์</p>
+                    <p style="color: #cbd5e1;">Esport เติบโตอย่างก้าวกระโดดด้วยแพลตฟอร์มสตรีมมิ่ง (Twitch, YouTube) และได้รับการบรรจุเข้าแข่งขันในมหกรรมกีฬาระดับทวีป เช่น เอเชียนเกมส์</p>
                 </li>
             </ul>
+        </section>
+
+        <!-- ส่วนที่ 2: 10 อันดับการแข่งขันเงินรางวัลสูงสุด -->
+        <section>
+            <h2 class="section-title">🏆 10 อันดับ Esport เงินรางวัลสูงสุด</h2>
+            <ol class="esport-list">
+                <li>
+                    <strong>The International 2021 (Dota 2)</strong><br>
+                    💰 เงินรางวัลรวม: <span class="prize">$40,018,400</span> (ประมาณ 1,300 ล้านบาท)<br>
+                    <div class="desc">ทัวร์นาเมนต์ชิงแชมป์โลกของเกม Dota 2 ที่สูงที่สุดเป็นประวัติการณ์จากการระดมทุน Battle Pass</div>
+                </li>
+                <li>
+                    <strong>The International 2019 (Dota 2)</strong><br>
+                    💰 เงินรางวัลรวม: <span class="prize">$34,330,069</span><br>
+                    <div class="desc">จัดขึ้นที่เซี่ยงไฮ้ ประเทศจีน ซึ่งทีม OG สร้างประวัติศาสตร์คว้าแชมป์สมัยที่ 2</div>
+                </li>
+                <li>
+                    <strong>The International 2018 (Dota 2)</strong><br>
+                    💰 เงินรางวัลรวม: <span class="prize">$25,532,177</span><br>
+                    <div class="desc">จัดขึ้นที่แคนาดา โดยทีม OG พลิกสถานการณ์คว้าแชมป์โลกได้เป็นครั้งแรก</div>
+                </li>
+                <li>
+                    <strong>The International 2017 (Dota 2)</strong><br>
+                    💰 เงินรางวัลรวม: <span class="prize">$24,687,919</span><br>
+                    <div class="desc">จัดขึ้นที่ซีแอตเทิล สหรัฐอเมริกา ทีม Team Liquid คว้าแชมป์ไปครองอย่างไร้พ่าย</div>
+                </li>
+                <li>
+                    <strong>The International 2016 (Dota 2)</strong><br>
+                    💰 เงินรางวัลรวม: <span class="prize">$20,770,460</span><br>
+                    <div class="desc">ปีแรกที่เงินรางวัลทัวร์นาเมนต์ทะลุหลัก 20 ล้านดอลลาร์สหรัฐอย่างเป็นทางการ</div>
+                </li>
+                <li>
+                    <strong>The International 2022 (Dota 2)</strong><br>
+                    💰 เงินรางวัลรวม: <span class="prize">$18,930,256</span><br>
+                    <div class="desc">จัดขึ้นที่ประเทศสิงคโปร์ ทีม Tundra Esports เป็นผู้ชูถ้วย Aegis of Champions</div>
+                </li>
+                <li>
+                    <strong>The International 2015 (Dota 2)</strong><br>
+                    💰 เงินรางวัลรวม: <span class="prize">$18,429,613</span><br>
+                    <div class="desc">จัดขึ้นที่ KeyArena สหรัฐอเมริกา โดยทีม Evil Geniuses คว้าแชมป์โลกไปครอง</div>
+                </li>
+                <li>
+                    <strong>Fortnite World Cup Finals 2019 - Solo (Fortnite)</strong><br>
+                    💰 เงินรางวัลรวม: <span class="prize">$15,287,500</span><br>
+                    <div class="desc">การแข่งขันเดี่ยวสุดยิ่งใหญ่ ผู้เล่นดาวรุ่ง "Bugha" คว้าแชมป์เดี่ยวรับเงินมหาศาล</div>
+                </li>
+                <li>
+                    <strong>Riyadh Masters 2023 (Dota 2)</strong><br>
+                    💰 เงินรางวัลรวม: <span class="prize">$15,120,000</span><br>
+                    <div class="desc">จัดขึ้นในเทศกาล Gamers8 ที่กรุงริยาด ซาอุดีอาระเบีย ด้วยเงินสนับสนุนมหาศาลนอกค่าย</div>
+                </li>
+                <li>
+                    <strong>Fortnite World Cup Finals 2019 - Duo (Fortnite)</strong><br>
+                    💰 เงินรางวัลรวม: <span class="prize">$15,100,000</span><br>
+                    <div class="desc">การแข่งขันประเภททีมคู่ (Duo) ของศึก Fortnite World Cup 2019 แจกหนักไม่แพ้ประเภทเดี่ยว</div>
+                </li>
+            </ol>
         </section>
     </main>
 
