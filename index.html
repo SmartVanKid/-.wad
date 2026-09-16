@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ประวัติและ 10 อันดับ Esport เงินรางวัลสูงสุด</title>
+    <title>ประวัติและ 10 อันดับ Esport เงินรางวัลสูงสุด (หน้า 1)</title>
     <style>
         * {
             margin: 0;
@@ -33,13 +33,14 @@
                         url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
         }
 
-        /* ส่วนหัวข้อเว็บ (โทนน้ำเงิน-ฟ้า-ขาว) */
+        /* ส่วนหัวข้อเว็บ */
         header {
             text-align: center;
             padding: 40px 20px;
             background: rgba(13, 27, 42, 0.7);
             backdrop-filter: blur(8px);
             border-bottom: 3px solid #38bdf8;
+            position: relative;
         }
 
         header h1 {
@@ -52,6 +53,30 @@
         header p {
             font-size: 1.2rem;
             color: #93c5fd;
+        }
+
+        /* ปุ่มไปหน้าถัดไป (มุมขวาบน) */
+        .next-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border: 1px solid #38bdf8;
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .next-btn:hover {
+            background: #38bdf8;
+            color: #0b132b;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
         }
 
         /* เนื้อหาหลัก */
@@ -147,7 +172,7 @@
         }
 
         .prize {
-            color: #34d399; /* สีเขียวมิ้นต์เน้นตัวเลขเงินรางวัล */
+            color: #34d399;
             font-weight: bold;
         }
 
@@ -157,7 +182,33 @@
             margin-top: 5px;
         }
 
-        /* ส่วนควบคุมเสียงเพลงแบบปุ่มกด (โทนฟ้า-น้ำเงิน) */
+        /* ปุ่มไปหน้า 2 ด้านล่าง (เพิ่มเติมเพื่อความสะดวก) */
+        .bottom-nav {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .bottom-next-btn {
+            background: #38bdf8;
+            color: #0b132b;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .bottom-next-btn:hover {
+            background: #ffffff;
+            color: #0369a1;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            transform: scale(1.05);
+        }
+
+        /* ส่วนควบคุมเสียงเพลงแบบปุ่มกด */
         .music-player {
             position: fixed;
             bottom: 20px;
@@ -224,13 +275,16 @@
         เบราว์เซอร์ของคุณไม่รองรับการเล่นเสียง
     </audio>
 
-    <!-- กล่องควบคุมเพลง (ปุ่มกด + อีโมจิ 🎵) -->
+    <!-- กล่องควบคุมเพลง -->
     <div class="music-player">
         <div class="music-info">🎵 Flash Funk Remix</div>
         <button class="play-btn" id="playBtn" onclick="toggleMusic()">▶</button>
     </div>
 
     <header>
+        <!-- ปุ่มไปหน้า 2 (ลิงก์ไปที่ไฟล์หน้า 2 ให้ตั้งชื่อว่า esport-page2.html) -->
+        <a href="esport-page2.html" class="next-btn">หน้า 2 ➡</a>
+        
         <h1>ESPORTS WORLD</h1>
         <p>ประวัติความเป็นมาและ 10 อันดับทัวร์นาเมนต์เงินรางวัลสูงสุดระดับโลก</p>
     </header>
@@ -317,6 +371,11 @@
                     <div class="desc">การแข่งขันประเภททีมคู่ (Duo) ของศึก Fortnite World Cup 2019 แจกหนักไม่แพ้ประเภทเดี่ยว</div>
                 </li>
             </ol>
+
+            <!-- ปุ่มไปหน้า 2 ด้านล่าง -->
+            <div class="bottom-nav">
+                <a href="esport-page2.html" class="bottom-next-btn">ไปหน้าตารางไฮไลท์ (หน้า 2) ➡</a>
+            </div>
         </section>
     </main>
 
