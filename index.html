@@ -177,14 +177,14 @@
     <!-- พื้นหลังภาพโทนฟ้า-น้ำเงิน -->
     <div class="background-container"></div>
 
-    <!-- ตัวเล่นเพลงผ่าน YouTube แบบซ่อนวิดีโอ (เล่นเพลงสไตล์เกมมิ่งมันส์ๆ) -->
+    <!-- เพลง Flash Funk พร้อมตั้งค่าวนลูป (loop=1 & playlist) -->
     <div class="hidden-audio">
-        <iframe id="youtube-audio" width="0" height="0" src="https://www.youtube.com/embed/7X8m-T09d7U?enablejsapi=1&autoplay=0&loop=1&playlist=7X8m-T09d7U" frameborder="0"></iframe>
+        <iframe id="youtube-audio" width="0" height="0" src="https://www.youtube.com/embed/BQX9x6P5w7k?enablejsapi=1&autoplay=0&loop=1&playlist=BQX9x6P5w7k" frameborder="0"></iframe>
     </div>
 
     <!-- กล่องควบคุมเพลง (ปุ่มกด + อีโมจิ 🎵) -->
     <div class="music-player">
-        <div class="music-info">🎵 Esport Gaming Theme</div>
+        <div class="music-info">🎵 Flash Funk (Marshmello)</div>
         <button class="play-btn" id="playBtn" onclick="toggleMusic()">▶</button>
     </div>
 
@@ -226,7 +226,7 @@
         <p>&copy; 2026 Esport History Project. All rights reserved.</p>
     </footer>
 
-    <!-- Script สำหรับควบคุมการเล่นเพลงผ่าน YouTube API -->
+    <!-- Script สำหรับควบคุมการเล่นและสั่งวนลูปเพลงผ่าน YouTube API -->
     <script>
         let isPlaying = false;
         const playBtn = document.getElementById('playBtn');
@@ -234,8 +234,9 @@
 
         function toggleMusic() {
             if (!isPlaying) {
-                // สั่งเล่นเพลง
+                // สั่งเล่นเพลงและตั้งค่าลูป
                 iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+                iframe.contentWindow.postMessage('{"event":"command","func":"setLoop","args":[true]}', '*');
                 playBtn.textContent = '❚❚';
                 isPlaying = true;
             } else {
