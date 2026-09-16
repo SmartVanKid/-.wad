@@ -111,25 +111,49 @@
             font-size: 1.2rem;
         }
 
-        /* ส่วนควบคุมเสียงเพลง (Music Player ลอยตัวมุมขวาล่าง) */
+        /* ส่วนควบคุมเสียงเพลงแบบปุ่มเดี่ยวสไตล์มินิมอล */
         .music-player {
             position: fixed;
             bottom: 20px;
             right: 20px;
             background: rgba(20, 20, 40, 0.9);
-            padding: 15px 20px;
+            padding: 12px 20px;
             border-radius: 30px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.5);
             border: 1px solid #00ffcc;
             z-index: 1000;
         }
 
         .music-info {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #00ffcc;
+        }
+
+        /* ปุ่มเล่นเพลงสไตล์เกมมิ่ง */
+        .play-btn {
+            background: #00ffcc;
+            color: #0a0a1a;
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: 0.2s;
+            box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+        }
+
+        .play-btn:hover {
+            background: #ff0077;
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(255, 0, 119, 0.8);
+            transform: scale(1.05);
         }
 
         /* Footer */
@@ -144,18 +168,19 @@
 </head>
 <body>
 
-    <!-- พื้นหลัง (ภาพประกอบแนวสนามแข่ง Esport แสงนีออนสไตล์เกมมิ่ง) -->
+    <!-- พื้นหลังภาพสนามแข่ง Esport -->
     <div class="background-container"></div>
 
-    <!-- เพลงประกอบ (เพลงแนว Synthwave / Cyberpunk จาก YouTube Audio Library หรือลิงก์สาธารณะที่เร้าใจเข้ากับ Esport) -->
-    <!-- หมายเหตุ: เบราว์เซอร์สมัยใหม่อาจบล็อกการเล่นเพลงอัตโนมัติ ผู้ใช้ต้องกด Play ที่ปุ่มควบคุม -->
+    <!-- ไฟล์เสียงเพลง (ซ่อนเครื่องเล่นเดิมของเบราว์เซอร์) -->
+    <audio id="bg-music" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf756.mp3?filename=cyberpunk-2099-10701.mp3" type="audio/mpeg">
+        เบราว์เซอร์ของคุณไม่รองรับการเล่นเสียง
+    </audio>
+
+    <!-- กล่องควบคุมเพลงแบบปุ่มกดพร้อมอีโมจิ 🎵 -->
     <div class="music-player">
-        <div class="music-info">🎧 กำลังเล่น: Synthwave Esport Theme</div>
-        <audio id="bg-music" controls loop>
-            <!-- ใช้เพลงสตรีมมิ่งตัวอย่างแนวอิเล็กทรอนิกส์ -->
-            <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf756.mp3?filename=cyberpunk-2099-10701.mp3" type="audio/mpeg">
-            เบราว์เซอร์ของคุณไม่รองรับการเล่นเสียง
-        </audio>
+        <div class="music-info">🎵 Synthwave Esport</div>
+        <button class="play-btn" id="playBtn" onclick="toggleMusic()">▶</button>
     </div>
 
     <header>
@@ -195,6 +220,22 @@
     <footer>
         <p>&copy; 2026 Esport History Project. All rights reserved.</p>
     </footer>
+
+    <!-- Script สำหรับควบคุมการเล่น/หยุดเพลงด้วยปุ่ม -->
+    <script>
+        const music = document.getElementById('bg-music');
+        const playBtn = document.getElementById('playBtn');
+
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+                playBtn.textContent = '❚❚'; // เปลี่ยนไอคอนเป็น Pause เมื่อเพลงเล่น
+            } else {
+                music.pause();
+                playBtn.textContent = '▶';  // เปลี่ยนไอคอนเป็น Play เมื่อเพลงหยุด
+            }
+        }
+    </script>
 
 </body>
 </html>
