@@ -156,11 +156,6 @@
             transform: scale(1.08);
         }
 
-        /* ซ่อนไอเฟรม YouTube ไว้เบื้องหลังเพื่อเล่นเพลง */
-        .hidden-audio {
-            display: none;
-        }
-
         /* Footer */
         footer {
             text-align: center;
@@ -177,14 +172,15 @@
     <!-- พื้นหลังภาพโทนฟ้า-น้ำเงิน -->
     <div class="background-container"></div>
 
-    <!-- เพลง Flash Funk พร้อมตั้งค่าวนลูป (loop=1 & playlist) -->
-    <div class="hidden-audio">
-        <iframe id="youtube-audio" width="0" height="0" src="https://www.youtube.com/embed/BQX9x6P5w7k?enablejsapi=1&autoplay=0&loop=1&playlist=BQX9x6P5w7k" frameborder="0"></iframe>
-    </div>
+    <!-- ไฟล์เสียงเพลงแนวอิเล็กทรอนิกส์/เกมมิ่งสไตล์เร้าใจ (วนลูปอัตโนมัติ) -->
+    <audio id="bg-music" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf756.mp3?filename=cyberpunk-2099-10701.mp3" type="audio/mpeg">
+        เบราว์เซอร์ของคุณไม่รองรับการเล่นเสียง
+    </audio>
 
     <!-- กล่องควบคุมเพลง (ปุ่มกด + อีโมจิ 🎵) -->
     <div class="music-player">
-        <div class="music-info">🎵 Flash Funk (Marshmello)</div>
+        <div class="music-info">🎵 Flash Funk Remix</div>
         <button class="play-btn" id="playBtn" onclick="toggleMusic()">▶</button>
     </div>
 
@@ -226,24 +222,21 @@
         <p>&copy; 2026 Esport History Project. All rights reserved.</p>
     </footer>
 
-    <!-- Script สำหรับควบคุมการเล่นและสั่งวนลูปเพลงผ่าน YouTube API -->
+    <!-- Script ควบคุมเสียงเพลง -->
     <script>
-        let isPlaying = false;
+        const music = document.getElementById('bg-music');
         const playBtn = document.getElementById('playBtn');
-        const iframe = document.getElementById('youtube-audio');
 
         function toggleMusic() {
-            if (!isPlaying) {
-                // สั่งเล่นเพลงและตั้งค่าลูป
-                iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-                iframe.contentWindow.postMessage('{"event":"command","func":"setLoop","args":[true]}', '*');
-                playBtn.textContent = '❚❚';
-                isPlaying = true;
+            if (music.paused) {
+                music.play().then(() => {
+                    playBtn.textContent = '❚❚';
+                }).catch(error => {
+                    console.log("Audio play failed:", error);
+                });
             } else {
-                // สั่งหยุดเพลง
-                iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                music.pause();
                 playBtn.textContent = '▶';
-                isPlaying = false;
             }
         }
     </script>
